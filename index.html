@@ -4,19 +4,22 @@
 <head>
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0, shrink-to-fit=no'>
-    <title>OhMyFood | Homepage</title>
+    <title>ohmyfood | Homepage</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Shrikhand&display=swap"
+        rel="stylesheet">
     <script src="https://kit.fontawesome.com/2ce19aeb26.js" crossorigin="anonymous"></script>
     <link rel='stylesheet' href='./assets/CSS/styles.css'>
 </head>
 
 <body>
-    <div id="main-content">
+    <div class="main-content">
         <header class="header">
             <div class="header__title">
-                <h1>OhMyFood</h1>
+                <h1>ohmyfood</h1>
             </div>
             <div class="header__location">
                 <p><i class="fa-solid fa-location-dot header__icon-location" aria-hidden="true"></i>Paris, Belleville
@@ -25,9 +28,9 @@
         </header>
         <main>
             <section class="reserver">
-                <h2 class="reserver__title">Réservez le menu qui vous convient</h2>
+                <h2 class="reserver__title">Réservez le menu qui<br>vous convient</h2>
                 <p class="reserver__description">Découvrez des restaurants d’exception, sélectionnés par nos soins.</p>
-                <button class="reserver__button">Explorer nos restaurants</button>
+                <a class="reserver__ancre" href="#restaurants">Explorer nos restaurants</a>
             </section>
             <section class="fonctionnement">
                 <h2 class="fonctionnement__title">Fonctionnement</h2>
@@ -35,13 +38,13 @@
                     <li class="fonctionnement__item"><i
                             class="fa-solid fa-mobile-screen-button fonctionnement__icon"></i>Choisissez un restaurant
                     </li>
-                    <li class="fonctionnement__item"><i class="fa-solid fa-list-ul fonctionnement__icon"></i>Choisissez
-                        un restaurant</li>
+                    <li class="fonctionnement__item"><i class="fa-solid fa-list-ul fonctionnement__icon"></i>Composez
+                        votre menu</li>
                     <li class="fonctionnement__item"><i class="fa-solid fa-store fonctionnement__icon"></i>Dégustez au
                         restaurant</li>
                 </ol>
             </section>
-            <section class="restaurants">
+            <section class="restaurants" id="restaurants">
                 <h2 class="restaurants__title">Restaurants</h2>
                 <div class="restaurants__container">
                     <a href="#" class="restaurant-card">
@@ -102,14 +105,14 @@
             </section>
         </main>
         <footer class="footer">
-            <img src="./assets/img/logo/ohmyfood.png" alt="logo OhMyFood" class="footer__logo">
+            <img src="./assets/img/logo/ohmyfood@2x.svg" alt="logo ohmyfood" class="footer__logo">
             <nav class="footer__nav">
-                <a href="#" class="footer__link"><i class="fa-solid fa-utensils footer__icon"></i>Proposer un
+                <a href="#" class="footer__nav-link"><i class="fa-solid fa-utensils footer__nav-icon"></i>Proposer un
                     restaurant</a>
-                <a href="#" class="footer__link"><i class="fa-solid fa-handshake-angle footer__icon"></i>Devenir
+                <a href="#" class="footer__nav-link"><i class="fa-solid fa-handshake-angle footer__nav-icon"></i>Devenir
                     partenaire</a>
-                <a href="#" class="footer__link">Mentions légales</a>
-                <a href="#" class="footer__link">Contact</a>
+                <a href="#" class="footer__nav-link">Mentions légales</a>
+                <a href="#" class="footer__nav-link">Contact</a>
             </nav>
         </footer>
     </div>
