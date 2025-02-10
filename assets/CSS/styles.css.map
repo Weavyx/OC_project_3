@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"styles.css"}
+{"version":3,"sources":["..\\SASS\\styles.scss","styles.css"],"names":[],"mappings":"AAAA;EACI,+BAAA;ACCJ;;ADEA;EACI,0CAAA;ACCJ","file":"styles.css","sourcesContent":["body {\r\n    font-family: Roboto, sans-serif;\r\n}\r\n\r\nh1 {\r\n    font-family: Shrikhand, Roboto, sans-serif;\r\n}","body {\n  font-family: Roboto, sans-serif;\n}\n\nh1 {\n  font-family: Shrikhand, Roboto, sans-serif;\n}"]}
