@@ -4,12 +4,12 @@
   box-sizing: border-box;
 }
 
-body {
+body, html {
   font-family: Roboto, sans-serif;
-}
-
-h1 {
-  font-family: Shrikhand, Roboto, sans-serif;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
 }
 
 a {
@@ -24,13 +24,15 @@ a {
   background-color: #f6f6f6;
   flex-flow: column nowrap;
   max-width: 1440px;
+  width: 100%;
 }
 .main-content .header {
   width: 100%;
   display: flex;
   flex-flow: column nowrap;
+  position: relative;
 }
-.main-content .header__title {
+.main-content .header__title-container {
   height: 63px;
   display: flex;
   justify-content: center;
@@ -38,13 +40,13 @@ a {
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1490196078);
   z-index: 50;
 }
-.main-content .header__title h1 {
+.main-content .header__title-container .header__title {
   font-size: 30px;
   font-weight: 400;
   line-height: 43.74px;
-  font-style: italic;
   letter-spacing: 0;
   color: #101010;
+  font-family: Shrikhand, Roboto, sans-serif;
 }
 .main-content .header__location {
   width: 100%;
@@ -67,6 +69,29 @@ a {
   width: 12px;
   height: 16 px;
   margin-right: 17px;
+}
+.main-content .header__go-back {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 17px;
+  left: 17px;
+  color: #353535;
+  z-index: 100;
+}
+.main-content .header__img {
+  width: 100%;
+  height: 275px;
+  overflow: hidden;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.main-content .header__img img {
+  width: 100%;
+  height: 100%;
 }
 .main-content main {
   width: 100%;
@@ -264,29 +289,6 @@ a {
   justify-content: space-between;
   align-items: center;
 }
-.main-content .restaurants .restaurant-card__like {
-  width: 22px;
-  height: 21px;
-  font-size: 21px;
-  color: black;
-  position: relative;
-}
-.main-content .restaurants .restaurant-card__like:hover {
-  color: transparent;
-}
-.main-content .restaurants .restaurant-card__like:hover::before {
-  content: "\f004";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
-  -webkit-background-clip: text;
-          background-clip: text;
-}
 .main-content .restaurants .restaurant-card__title {
   font-size: 18px;
   font-weight: 700;
@@ -322,6 +324,150 @@ a {
   justify-content: center;
   align-items: center;
 }
+.main-content .menu {
+  background-color: #f6f6f6;
+  border-radius: 40px;
+  transform: translateY(-55px);
+}
+.main-content .menu__header {
+  padding: 32px 17px 40px 17px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.main-content .menu__header-title {
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 40.82px;
+  letter-spacing: 0;
+  color: #101010;
+  font-family: Shrikhand, Roboto, sans-serif;
+}
+.main-content .menu__header .fa-heart {
+  margin-right: 24px;
+}
+.main-content .menu__section {
+  padding: 0 13px;
+  margin-bottom: 40px;
+}
+.main-content .menu__section-header {
+  margin-bottom: 12px;
+}
+.main-content .menu__section-header-title {
+  font-family: Roboto;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 18.75px;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+}
+.main-content .menu__section-header-title::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  background-color: #99E2D0;
+  margin-top: 5.25px;
+}
+.main-content .menu__section-content {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 12px;
+}
+.main-content .menu__dish {
+  height: 69px;
+  width: 100%;
+  box-shadow: 0px 4.01px 15.04px 0px rgba(0, 0, 0, 0.1019607843);
+  border-radius: 15.04px;
+  overflow: hidden;
+  position: relative;
+}
+.main-content .menu__dish-container {
+  padding: 13.5px 15px;
+  width: 100%;
+}
+.main-content .menu__dish-container-title {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21.09px;
+  letter-spacing: 0%;
+  color: #000000;
+  margin-bottom: 5px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.main-content .menu__dish-container-content {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  gap: 5px;
+}
+.main-content .menu__dish-container-content-description {
+  font-family: Roboto;
+  font-weight: 300;
+  font-size: 15.04px;
+  line-height: 17.63px;
+  letter-spacing: 0%;
+  color: #000000;
+  height: 19px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.main-content .menu__dish-container-content-price {
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 15.04px;
+  line-height: 17.63px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #353535;
+}
+.main-content .menu__dish-anim {
+  width: 59px;
+  height: 69px;
+  background-color: #99E2D0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 15px 15px 0;
+  left: 100%;
+  position: absolute;
+  top: 0;
+}
+.main-content .menu__dish:hover .menu__dish-anim {
+  transform: translateX(-100%);
+}
+.main-content .menu__dish:hover .menu__dish-container {
+  padding-right: 74px;
+}
+.main-content .menu__order {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+.main-content .menu__order-btn {
+  width: 186px;
+  height: 50px;
+  border-radius: 25px;
+  background: linear-gradient(0deg, #9356DC -11.44%, #FF79DA 123.93%);
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2509803922);
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18.75px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #FFFFFF;
+  border: none;
+}
+.main-content .menu__order-btn:hover {
+  filter: brightness(115%);
+}
 
 .footer {
   background-color: #353535;
@@ -333,7 +479,6 @@ a {
 }
 .footer__logo {
   font-weight: 400;
-  font-style: italic;
   font-size: 18px;
   line-height: 26.24px;
   letter-spacing: 0;
@@ -364,4 +509,28 @@ a {
   line-height: 13px;
   font-size: 13px;
   margin-right: 11px;
+}
+
+.fa-heart {
+  width: 22px;
+  height: 21px;
+  font-size: 21px;
+  color: black;
+  position: relative;
+}
+.fa-heart:hover {
+  color: transparent;
+}
+.fa-heart:hover::before {
+  content: "\f004";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  -webkit-background-clip: text;
+          background-clip: text;
 }/*# sourceMappingURL=styles.css.map */
