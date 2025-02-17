@@ -213,6 +213,10 @@ a{
                 background: linear-gradient(0deg, #9356DC -5.2%, #FF79DA 110.74%);
                 filter: brightness(115%);
                 box-shadow: 0px 4px 15px 0px #00000059;
+                span {
+                    display: inline-block;
+                    animation: textMove 0.5s ease-in-out;
+                }
             }
         }
 
@@ -640,6 +644,10 @@ a{
                     filter: brightness(115%);
                     box-shadow: 0px 4px 15px 0px #00000059;
                     background: linear-gradient(0deg, #9356DC -5.2%, #FF79DA 110.74%);
+                    span {
+                        display: inline-block;
+                        animation: textMove 0.5s ease-in-out;
+                    }
                 }
             }
         }
@@ -815,5 +823,14 @@ a{
     100% {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes textMove {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(1px, 1px);
     }
 }
