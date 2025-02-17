@@ -258,6 +258,7 @@ a {
   border-radius: 20px;
   background-color: #fff;
   overflow: hidden;
+  max-width: 346px;
 }
 .main-content .restaurants .restaurant-card__article {
   display: flex;
