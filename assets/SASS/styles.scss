@@ -198,7 +198,7 @@ a{
             width: 218px;
             height: 50px;
             border-radius: 25px;
-            background: linear-gradient(0deg, #9356DC 10%, #FF79DA 90%);
+            background: linear-gradient(0deg, #9356DC -11.44%, #FF79DA 123.93%);
             box-shadow: 0px 4px 10px 0px #00000040;
             font-weight: 500;
             font-size: 16px;
@@ -208,9 +208,11 @@ a{
             text-decoration: none;
             color: #FFFFFF;
             padding: 16px;
+            transition : filter 0.5s, box-shadow 0.5s;
             &:hover{
-                background: linear-gradient(0deg, #9356DC 10%, #FF79DA 90%);
+                background: linear-gradient(0deg, #9356DC -5.2%, #FF79DA 110.74%);
                 filter: brightness(115%);
+                box-shadow: 0px 4px 15px 0px #00000059;
             }
         }
 
@@ -345,6 +347,7 @@ a{
         &__container{
             display: flex;
             flex-flow: column nowrap;
+            align-items: center;
             gap: 18px;
             @media screen and (min-width: 1440px){
                 gap:100px;
@@ -534,6 +537,7 @@ a{
             position: relative;
             &-container{
                 padding: 13.5px 15px;
+                transition: padding-right 500ms;
                 width: 100%;
                 &-title{
                     font-family: Roboto;
@@ -586,13 +590,16 @@ a{
                 left:100%;
                 position: absolute;
                 top: 0;
+                transition-property: transform;
+                transition-duration: 500ms;
             }
             &:hover{
                 .menu__dish-anim{
                     transform: translateX(-100%);
                 }
                 .menu__dish-container{
-                    padding-right:74px;}
+                    padding-right:74px;
+                }
             }
         }
 
@@ -614,8 +621,11 @@ a{
                 text-align: center;
                 color: #FFFFFF;
                 border: none;
+                transition: filter 0.5s, box-shadow 0.5s;
                 &:hover{
                     filter: brightness(115%);
+                    box-shadow: 0px 4px 15px 0px #00000059;
+                    background: linear-gradient(0deg, #9356DC -5.2%, #FF79DA 110.74%);
                 }
             }
         }
@@ -701,25 +711,36 @@ a{
     }
 }
 
-.fa-heart{
+.fa-heart {
     width: 22px;
-    height: 21px;
-    font-size: 21px;
+    height: 22px;
     color: black;
+    font-size: 22px;
     position: relative;
+    transition: color 1s ease-in-out;
+
+    &::after {
+        content: "\f004"; // Code Unicode pour l'icône de cœur
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        clip-path: circle(0% at 50% 50%);
+        transition: clip-path 1s ease-in-out;
+    }
+
+    &:hover::after {
+        clip-path: circle(100% at 50% 50%);
+    }
+
     &:hover {
         color: transparent;
-        &::before {
-            content: "\f004";
-            font-family: "Font Awesome 5 Free";
-            font-weight: 900;
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
-            background-clip: text;
-        }
     }
 }

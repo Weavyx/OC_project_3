@@ -189,7 +189,7 @@ a {
   width: 218px;
   height: 50px;
   border-radius: 25px;
-  background: linear-gradient(0deg, #9356DC 10%, #FF79DA 90%);
+  background: linear-gradient(0deg, #9356DC -11.44%, #FF79DA 123.93%);
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2509803922);
   font-weight: 500;
   font-size: 16px;
@@ -199,10 +199,12 @@ a {
   text-decoration: none;
   color: #FFFFFF;
   padding: 16px;
+  transition: filter 0.5s, box-shadow 0.5s;
 }
 .main-content .reserver__ancre:hover {
-  background: linear-gradient(0deg, #9356DC 10%, #FF79DA 90%);
+  background: linear-gradient(0deg, #9356DC -5.2%, #FF79DA 110.74%);
   filter: brightness(115%);
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.3490196078);
 }
 @media screen and (min-width: 1440px) {
   .main-content .reserver {
@@ -332,6 +334,7 @@ a {
 .main-content .restaurants__container {
   display: flex;
   flex-flow: column nowrap;
+  align-items: center;
   gap: 18px;
 }
 @media screen and (min-width: 1440px) {
@@ -525,6 +528,7 @@ a {
 }
 .main-content .menu__dish-container {
   padding: 13.5px 15px;
+  transition: padding-right 500ms;
   width: 100%;
 }
 .main-content .menu__dish-container-title {
@@ -577,6 +581,8 @@ a {
   left: 100%;
   position: absolute;
   top: 0;
+  transition-property: transform;
+  transition-duration: 500ms;
 }
 .main-content .menu__dish:hover .menu__dish-anim {
   transform: translateX(-100%);
@@ -603,9 +609,12 @@ a {
   text-align: center;
   color: #FFFFFF;
   border: none;
+  transition: filter 0.5s, box-shadow 0.5s;
 }
 .main-content .menu__order-btn:hover {
   filter: brightness(115%);
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.3490196078);
+  background: linear-gradient(0deg, #9356DC -5.2%, #FF79DA 110.74%);
 }
 @media screen and (min-width: 1440px) {
   .main-content .menu {
@@ -689,15 +698,13 @@ a {
 
 .fa-heart {
   width: 22px;
-  height: 21px;
-  font-size: 21px;
+  height: 22px;
   color: black;
+  font-size: 22px;
   position: relative;
+  transition: color 1s ease-in-out;
 }
-.fa-heart:hover {
-  color: transparent;
-}
-.fa-heart:hover::before {
+.fa-heart::after {
   content: "\f004";
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
@@ -707,6 +714,19 @@ a {
   right: 0;
   bottom: 0;
   background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  background-clip: text;
   -webkit-background-clip: text;
-          background-clip: text;
+  color: transparent;
+  -webkit-clip-path: circle(0% at 50% 50%);
+          clip-path: circle(0% at 50% 50%);
+  transition: -webkit-clip-path 1s ease-in-out;
+  transition: clip-path 1s ease-in-out;
+  transition: clip-path 1s ease-in-out, -webkit-clip-path 1s ease-in-out;
+}
+.fa-heart:hover::after {
+  -webkit-clip-path: circle(100% at 50% 50%);
+          clip-path: circle(100% at 50% 50%);
+}
+.fa-heart:hover {
+  color: transparent;
 }/*# sourceMappingURL=styles.css.map */
