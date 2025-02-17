@@ -206,6 +206,10 @@ a {
   filter: brightness(115%);
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.3490196078);
 }
+.main-content .reserver__ancre:hover span {
+  display: inline-block;
+  animation: textMove 0.5s ease-in-out;
+}
 @media screen and (min-width: 1440px) {
   .main-content .reserver {
     padding: 30px 0;
@@ -627,6 +631,10 @@ a {
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.3490196078);
   background: linear-gradient(0deg, #9356DC -5.2%, #FF79DA 110.74%);
 }
+.main-content .menu__order-btn:hover span {
+  display: inline-block;
+  animation: textMove 0.5s ease-in-out;
+}
 @media screen and (min-width: 1440px) {
   .main-content .menu {
     max-width: 1055px;
@@ -796,5 +804,13 @@ a {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+@keyframes textMove {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(1px, 1px);
   }
 }/*# sourceMappingURL=styles.css.map */
