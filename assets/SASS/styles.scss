@@ -20,6 +20,14 @@ a{
     color : #000000;
 }
 
+.restaurant-header{
+    margin-bottom:-55px;
+    @media screen and (min-width: 1440px){
+        margin-bottom: -40px;
+
+    }
+}
+
 .header{
     width: 100%;
     display: flex;
@@ -95,6 +103,10 @@ a{
         left: 17px;
         color : #353535;
         z-index: 100;
+        @media screen and (min-width: 1440px){
+            top: 33px;
+            left: 17px;
+        }
     }
 
     &__img{
@@ -107,6 +119,9 @@ a{
             height: 100%;
 
         }
+        @media screen and (min-width: 1440px){
+            height: 383px;
+        }
     }
 }
 
@@ -114,7 +129,7 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f6f6f6;
+    background-color: #ffffff;
     flex-flow: column nowrap;
     max-width: 1440px;
     width: 100%;
@@ -220,11 +235,9 @@ a{
             line-height: 28.13px;
             letter-spacing: 0;
             color : #000000;
-            width: 100%;
             height: 31px;
-            @media screen and (min-width: 1440px){
-                margin-left: 416px;
-            }
+            width: 100%;
+            max-width: 1024px;
         }
 
         &__list{
@@ -444,8 +457,11 @@ a{
 
     & .menu{
         background-color: #f6f6f6;
-        border-radius: 40px;
-        transform: translateY(-55px);
+        border-radius: 40px 40px 0 0;
+        display: flex;
+        flex-flow: column nowrap;
+        padding-bottom: 40px;
+        z-index: 1000;
         &__header{
             padding: 32px 17px 40px 17px;
             display: flex;
@@ -460,9 +476,18 @@ a{
                 letter-spacing: 0;
                 color : #101010;
                 font-family: Shrikhand, Roboto, sans-serif;
+                @media screen and (min-width: 1440px){
+                    margin-right: 24px;
+
+                }
             }
             & .fa-heart{
                 margin-right: 24px;
+            }
+            @media screen and (min-width: 1440px){
+                justify-content: center;
+                padding: 51px 0 40px 0;
+
             }
         }
         &__section{
@@ -494,6 +519,10 @@ a{
                 flex-flow: column nowrap;
                 gap: 12px;
 
+            }
+            @media screen and (min-width: 1440px){
+                max-width: 634px;
+                width: 634px;
             }
         }
         &__dish{
@@ -590,6 +619,12 @@ a{
                 }
             }
         }
+        @media screen and (min-width: 1440px){
+            max-width: 1055px;
+            // padding: auto;
+            justify-content: center;
+            align-items: center;
+        }
     }
 }
 
@@ -663,7 +698,6 @@ a{
         justify-content: flex-start;
         align-items: center;
         padding: 64px 25px 30px 599px;
-
     }
 }
 
