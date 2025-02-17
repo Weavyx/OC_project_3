@@ -487,6 +487,17 @@ a {
 .main-content .menu__section {
   padding: 0 13px;
   margin-bottom: 40px;
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+}
+.main-content .menu__section:nth-child(2) {
+  animation-delay: 0.5s;
+}
+.main-content .menu__section:nth-child(3) {
+  animation-delay: 0.75s;
+}
+.main-content .menu__section:nth-child(4) {
+  animation-delay: 1.25s;
 }
 .main-content .menu__section-header {
   margin-bottom: 12px;
@@ -775,5 +786,15 @@ a {
 @keyframes hideLoader {
   to {
     display: none;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }/*# sourceMappingURL=styles.css.map */

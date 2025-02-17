@@ -496,6 +496,19 @@ a{
         &__section{
             padding: 0 13px;
             margin-bottom: 40px;
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+            &:nth-child(2) {
+                animation-delay: 0.5s;
+            }
+
+            &:nth-child(3) {
+                animation-delay: .75s;
+            }
+
+            &:nth-child(4) {
+                animation-delay: 1.25s;
+            }
             &-header{
                 margin-bottom: 12px;
                 &-title{
@@ -528,6 +541,7 @@ a{
                 width: 634px;
             }
         }
+
         &__dish{
             height: 69px;
             width: 100%;
@@ -790,5 +804,16 @@ a{
 @keyframes hideLoader {
     to {
         display: none;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
