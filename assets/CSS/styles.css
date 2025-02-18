@@ -1,10 +1,13 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
   font-family: Roboto, sans-serif;
   width: 100%;
   display: flex;
@@ -189,7 +192,7 @@ a {
   width: 218px;
   height: 50px;
   border-radius: 25px;
-  background: linear-gradient(0deg, #9356DC -11.44%, #FF79DA 123.93%);
+  background: linear-gradient(0deg, #9356dc -11.44%, #ff79da 123.93%);
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2509803922);
   font-weight: 500;
   font-size: 16px;
@@ -197,12 +200,12 @@ a {
   letter-spacing: 0;
   text-align: center;
   text-decoration: none;
-  color: #FFFFFF;
+  color: #ffffff;
   padding: 16px;
   transition: filter 0.5s, box-shadow 0.5s;
 }
 .main-content .reserver__ancre:hover {
-  background: linear-gradient(0deg, #9356DC -5.2%, #FF79DA 110.74%);
+  background: linear-gradient(0deg, #9356dc -5.2%, #ff79da 110.74%);
   filter: brightness(115%);
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.3490196078);
 }
@@ -264,7 +267,7 @@ a {
   top: 50%;
   transform: translateY(-50%);
   border-radius: 50%;
-  color: #7E7E7E;
+  color: #7e7e7e;
   left: 20px;
 }
 .main-content .fonctionnement__list .fonctionnement__item .fa-mobile-screen-button {
@@ -284,7 +287,7 @@ a {
   height: 17.91px;
   font-size: 17.91px;
   left: 35.49px;
-  color: #9356DC;
+  color: #9356dc;
 }
 .main-content .fonctionnement__list .fonctionnement__item::after {
   content: counter(item);
@@ -292,7 +295,7 @@ a {
   left: 0;
   top: 50%;
   font-size: 24px;
-  color: #FFFFFF;
+  color: #ffffff;
   width: 24px;
   height: 24px;
   font-size: 14.18px;
@@ -302,7 +305,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #9356DC;
+  background-color: #9356dc;
   border-radius: 100%;
   transform: translate(-50%, -50%);
 }
@@ -429,7 +432,7 @@ a {
   position: absolute;
   top: 13px;
   right: 12px;
-  background-color: #99E2D0;
+  background-color: #99e2d0;
   color: #008766;
   font-weight: 500;
   font-size: 14px;
@@ -519,7 +522,7 @@ a {
   display: block;
   width: 40px;
   height: 3px;
-  background-color: #99E2D0;
+  background-color: #99e2d0;
   margin-top: 5.25px;
 }
 .main-content .menu__section-content {
@@ -588,7 +591,7 @@ a {
 .main-content .menu__dish-anim {
   width: 59px;
   height: 69px;
-  background-color: #99E2D0;
+  background-color: #99e2d0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -614,7 +617,7 @@ a {
   width: 186px;
   height: 50px;
   border-radius: 25px;
-  background: linear-gradient(0deg, #9356DC -11.44%, #FF79DA 123.93%);
+  background: linear-gradient(0deg, #9356dc -11.44%, #ff79da 123.93%);
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2509803922);
   font-family: Roboto;
   font-weight: 500;
@@ -622,14 +625,14 @@ a {
   line-height: 18.75px;
   letter-spacing: 0%;
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff;
   border: none;
   transition: filter 0.5s, box-shadow 0.5s;
 }
 .main-content .menu__order-btn:hover {
   filter: brightness(115%);
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.3490196078);
-  background: linear-gradient(0deg, #9356DC -5.2%, #FF79DA 110.74%);
+  background: linear-gradient(0deg, #9356dc -5.2%, #ff79da 110.74%);
 }
 .main-content .menu__order-btn:hover span {
   display: inline-block;
@@ -681,7 +684,7 @@ a {
   font-weight: 400;
   line-height: 18.75px;
   letter-spacing: 0;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 @media screen and (min-width: 1440px) {
   .footer__nav-link {
@@ -732,7 +735,7 @@ a {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(0deg, #9356DC -11.44%, #FF79DA 123.93%);
+  background: linear-gradient(0deg, #9356dc -11.44%, #ff79da 123.93%);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -756,7 +759,7 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  background: linear-gradient(193.33deg, #9356dc -11.44%, #ff79da 123.93%);
   display: flex;
   justify-content: center;
   align-items: center;
