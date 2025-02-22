@@ -1,3 +1,42 @@
+// Variables
+$primary-color: #9356dc;
+$secondary-color: #ff79da;
+$text-color: #000000;
+$light-text-color: #353535;
+$background-color: #f6f6f6;
+$box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+$font-family: "Roboto", sans-serif;
+$title-font-family: "Shrikhand", $font-family;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin media-query($breakpoint) {
+  @media screen and (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin gradient-background {
+  background: linear-gradient(
+    0deg,
+    $primary-color -11.44%,
+    $secondary-color 123.93%
+  );
+}
+
+@mixin box-shadow-hover {
+  transition: filter 0.5s, box-shadow 0.5s;
+  &:hover {
+    filter: brightness(115%);
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.36);
+  }
+}
+
 // Reset
 *,
 *::before,
@@ -10,22 +49,20 @@
 // Base
 body,
 html {
-  font-family: Roboto, sans-serif;
+  font-family: $font-family;
   width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  @include flex-center;
   flex-flow: column;
 }
 
 a {
   text-decoration: none;
-  color: #000000;
+  color: $text-color;
 }
 
 .restaurant-header {
   margin-bottom: -55px;
-  @media screen and (min-width: 768px) {
+  @include media-query(768px) {
     margin-bottom: -40px;
   }
 }
@@ -33,74 +70,67 @@ a {
 .header {
   width: 100%;
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: column;
   position: relative;
 
   &__title-container {
     height: 63px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0px 2px 4px 0px #00000026;
+    @include flex-center;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
     z-index: 50;
 
-    @media screen and (min-width: 768px) {
+    @include media-query(768px) {
       height: 96px;
     }
 
-    & .header__title {
+    .header__title {
       font-size: 30px;
       font-weight: 400;
       line-height: 43.74px;
-      letter-spacing: 0;
       color: #101010;
-      font-family: Shrikhand, Roboto, sans-serif;
-      @media screen and (min-width: 768px) {
+      font-family: $title-font-family;
+
+      @include media-query(768px) {
         height: 34.2px;
         font-size: 34.2px;
       }
     }
   }
+
   &__location {
     width: 100%;
     height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center;
     background-color: #eaeaea;
-    box-shadow: 0px 4px 4px 0px #00000040;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     z-index: 40;
-    color: #353535;
-    & p {
+    color: $light-text-color;
+
+    p {
       font-size: 16px;
       font-weight: 500;
       line-height: 18.75px;
-      letter-spacing: 0;
     }
 
-    & .header__icon-location {
+    .header__icon-location {
       width: 12px;
-      height: 16 px;
+      height: 16px;
       margin-right: 17px;
     }
-
-    @media screen and (min-width: 768px) {
-    }
   }
+
   &__go-back {
     position: absolute;
     width: 30px;
     height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center;
     top: 17px;
     left: 17px;
-    color: #353535;
+    color: $light-text-color;
     z-index: 100;
-    @media screen and (min-width: 768px) {
+
+    @include media-query(768px) {
       top: 33px;
-      left: 17px;
     }
   }
 
@@ -109,47 +139,48 @@ a {
     height: 275px;
     overflow: hidden;
     object-fit: cover;
-    & img {
+
+    img {
       width: 100%;
       height: 100%;
     }
-    @media screen and (min-width: 768px) {
+
+    @include media-query(768px) {
       height: 383px;
     }
   }
 }
 
 .main-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center;
   background-color: #ffffff;
-  flex-flow: column nowrap;
+  flex-flow: column;
   max-width: 1440px;
   width: 100%;
 
-  & main {
+  main {
     width: 100%;
   }
 
-  & .reserver {
+  .reserver {
     width: 100%;
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: column;
     justify-content: flex-start;
-    align-items: center;
-    background-color: #f6f6f6;
+    @include flex-center;
+    background-color: $background-color;
     padding: 39px 30px 57px 30px;
+
     &__title {
       font-size: 24px;
       font-weight: 700;
       line-height: 28.13px;
-      letter-spacing: 0;
-      color: #000000;
+      color: $text-color;
       text-align: center;
       width: 275px;
       height: 68px;
-      @media screen and (min-width: 768px) {
+
+      @include media-query(768px) {
         line-height: 46.88px;
         font-size: 40px;
         width: auto;
@@ -167,20 +198,17 @@ a {
       font-size: 18px;
       font-weight: 300;
       line-height: 21.09px;
-      letter-spacing: 0;
-      color: #353535;
+      color: $light-text-color;
       text-align: center;
       width: 315px;
       height: 46px;
       margin-bottom: 27px;
 
-      @media screen and (min-width: 768px) {
+      @include media-query(768px) {
         height: 46px;
         width: auto;
         margin-bottom: 18px;
-        vertical-align: auto;
-        display: flex;
-        align-items: center;
+        @include flex-center;
 
         br {
           display: none;
@@ -192,21 +220,17 @@ a {
       width: 218px;
       height: 50px;
       border-radius: 25px;
-      background: linear-gradient(0deg, #9356dc -11.44%, #ff79da 123.93%);
-      box-shadow: 0px 4px 10px 0px #00000040;
+      @include gradient-background;
+      box-shadow: $box-shadow;
       font-weight: 500;
       font-size: 16px;
       line-height: 18.75px;
-      letter-spacing: 0;
       text-align: center;
-      text-decoration: none;
       color: #ffffff;
       padding: 16px;
-      transition: filter 0.5s, box-shadow 0.5s;
+      @include box-shadow-hover;
+
       &:hover {
-        background: linear-gradient(0deg, #9356dc -5.2%, #ff79da 110.74%);
-        filter: brightness(115%);
-        box-shadow: 0px 4px 15px 0px #00000059;
         span {
           display: inline-block;
           animation: textMove 0.5s ease-in-out;
@@ -214,15 +238,15 @@ a {
       }
     }
 
-    @media screen and (min-width: 768px) {
+    @include media-query(768px) {
       padding: 30px 0;
     }
   }
 
-  & .fonctionnement {
+  .fonctionnement {
     width: 100%;
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: column;
     justify-content: center;
     align-items: flex-start;
     background-color: #ffffff;
@@ -233,8 +257,7 @@ a {
       font-size: 24px;
       font-weight: 700;
       line-height: 28.13px;
-      letter-spacing: 0;
-      color: #000000;
+      color: $text-color;
       height: 31px;
       width: 100%;
       max-width: 1024px;
@@ -242,9 +265,9 @@ a {
 
     &__list {
       display: flex;
-      flex-flow: column nowrap;
+      flex-flow: column;
       justify-content: flex-start;
-      align-items: center;
+      @include flex-center;
       gap: 24.93px;
       width: 100%;
       padding-left: 12px;
@@ -254,17 +277,17 @@ a {
       .fonctionnement__item {
         width: 100%;
         border-radius: 20px;
-        background-color: #f6f6f6;
-        box-shadow: 0px 4px 15px 0px #00000026;
+        background-color: $background-color;
+        box-shadow: $box-shadow;
         position: relative;
         padding: 28.59px 38px 28.12px 73.49px;
         font-size: 16px;
         font-weight: 500;
         line-height: 18.75px;
         counter-increment: item;
-        color: #000000;
+        color: $text-color;
 
-        & i {
+        i {
           position: absolute;
           top: 50%;
           transform: translateY(-50%);
@@ -272,26 +295,27 @@ a {
           color: #7e7e7e;
           left: 20px;
         }
-        & .fa-mobile-screen-button {
+
+        .fa-mobile-screen-button {
           width: 13.02px;
           height: 19.9px;
           font-size: 19.9px;
           left: 33.47px;
         }
 
-        & .fa-list-ul {
+        .fa-list-ul {
           width: 16px;
           height: 15.92px;
           font-size: 15.92px;
           left: 34.49px;
         }
 
-        & .fa-store {
+        .fa-store {
           width: 18px;
           height: 17.91px;
           font-size: 17.91px;
           left: 35.49px;
-          color: #9356dc;
+          color: $primary-color;
         }
 
         &::after {
@@ -306,41 +330,40 @@ a {
           font-size: 14.18px;
           font-weight: 500;
           line-height: 16.62px;
-          letter-spacing: 0;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background-color: #9356dc;
+          @include flex-center;
+          background-color: $primary-color;
           border-radius: 100%;
           transform: translate(-50%, -50%);
         }
       }
-      @media screen and (min-width: 768px) {
-        flex-flow: row nowrap;
+
+      @include media-query(768px) {
+        flex-flow: row;
         max-width: 1024px;
       }
     }
-    @media screen and (min-width: 768px) {
+
+    @include media-query(768px) {
       padding: 50px 26px;
       gap: 25px;
       justify-content: flex-start;
-      align-items: center;
+      @include flex-center;
     }
   }
 
-  & .restaurants {
-    background-color: #f6f6f6;
+  .restaurants {
+    background-color: $background-color;
     padding: 54px 17px;
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: column;
     gap: 20px;
 
-    @media screen and (min-width: 768px) {
+    @include media-query(768px) {
       padding: 54px 90px;
       gap: 24px;
     }
 
-    @media screen and (min-width: 1440px) {
+    @include media-query(1440px) {
       padding: 54px 180px;
       gap: 28px;
     }
@@ -349,25 +372,24 @@ a {
       font-size: 24px;
       font-weight: 700;
       line-height: 28.13px;
-      letter-spacing: 0;
-      color: #000000;
+      color: $text-color;
       width: 100%;
     }
 
     &__container {
       display: flex;
-      flex-flow: column nowrap;
-      align-items: center;
+      flex-flow: column;
+      @include flex-center;
       justify-content: center;
       gap: 18px;
 
-      @media screen and (min-width: 768px) {
+      @include media-query(768px) {
         flex-flow: row wrap;
         gap: 40px;
         row-gap: 25px;
       }
 
-      @media screen and (min-width: 1440px) {
+      @include media-query(1440px) {
         gap: 100px;
         row-gap: 50px;
       }
@@ -380,17 +402,17 @@ a {
       background-color: #fff;
       overflow: hidden;
 
-      @media screen and (min-width: 768px) {
+      @include media-query(768px) {
         max-width: calc((100% - 40px) / 2);
       }
 
-      @media screen and (min-width: 1440px) {
+      @include media-query(1440px) {
         max-width: 490px;
       }
 
       &__article {
         display: flex;
-        flex-flow: column nowrap;
+        flex-flow: column;
         gap: 0;
         width: 100%;
       }
@@ -415,13 +437,13 @@ a {
       &__content {
         padding: 16px 25px 12px 13px;
         display: flex;
-        flex-flow: row nowrap;
+        flex-flow: row;
         gap: 10px;
         row-gap: 5px;
         justify-content: space-between;
         align-items: center;
 
-        @media screen and (min-width: 768px) {
+        @include media-query(768px) {
           padding-left: 18.74px;
         }
       }
@@ -429,15 +451,14 @@ a {
       &__texts {
         row-gap: 5px;
         display: flex;
-        flex-flow: column nowrap;
+        flex-flow: column;
       }
 
       &__title {
         font-size: 18px;
         font-weight: 700;
         line-height: 21.09px;
-        letter-spacing: 0;
-        color: #000000;
+        color: $text-color;
         height: 20px;
       }
 
@@ -445,8 +466,7 @@ a {
         font-size: 17px;
         font-weight: 300;
         line-height: 19.92px;
-        letter-spacing: 0;
-        color: #000000;
+        color: $text-color;
         height: 24px;
       }
 
@@ -459,57 +479,60 @@ a {
         font-weight: 500;
         font-size: 14px;
         line-height: 16.41px;
-        letter-spacing: 0;
         text-align: center;
         width: 80px;
         height: 29px;
-        box-shadow: 0px 2px 4px 0px #00000026;
+        box-shadow: $box-shadow;
         border-radius: 2px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex-center;
       }
     }
   }
 
-  & .menu {
-    background-color: #f6f6f6;
+  .menu {
+    background-color: $background-color;
     border-radius: 40px 40px 0 0;
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: column;
     padding-bottom: 40px;
     z-index: 1000;
+
     &__header {
       padding: 32px 17px 40px 17px;
       display: flex;
-      flex-flow: row nowrap;
+      flex-flow: row;
       justify-content: space-between;
       align-items: center;
       width: 100%;
+
       &-title {
         font-size: 28px;
         font-weight: 400;
         line-height: 40.82px;
-        letter-spacing: 0;
         color: #101010;
-        font-family: Shrikhand, Roboto, sans-serif;
-        @media screen and (min-width: 768px) {
+        font-family: $title-font-family;
+
+        @include media-query(768px) {
           margin-right: 24px;
         }
       }
-      & .fa-heart {
+
+      .fa-heart {
         margin-right: 24px;
       }
-      @media screen and (min-width: 768px) {
+
+      @include media-query(768px) {
         justify-content: center;
         padding: 51px 0 40px 0;
       }
     }
+
     &__section {
       padding: 0 13px;
       margin-bottom: 40px;
       opacity: 0;
       animation: fadeIn 1s ease-in forwards;
+
       &:nth-child(2) {
         animation-delay: 0.5s;
       }
@@ -521,15 +544,17 @@ a {
       &:nth-child(4) {
         animation-delay: 1.25s;
       }
+
       &-header {
         margin-bottom: 12px;
+
         &-title {
-          font-family: Roboto;
+          font-family: $font-family;
           font-weight: 300;
           font-size: 16px;
           line-height: 18.75px;
-          letter-spacing: 0%;
           text-transform: uppercase;
+
           &::after {
             content: "";
             display: block;
@@ -543,10 +568,11 @@ a {
 
       &-content {
         display: flex;
-        flex-flow: column nowrap;
+        flex-flow: column;
         gap: 12px;
       }
-      @media screen and (min-width: 768px) {
+
+      @include media-query(768px) {
         max-width: 634px;
         width: 634px;
       }
@@ -555,61 +581,62 @@ a {
     &__dish {
       height: 69px;
       width: 100%;
-      box-shadow: 0px 4.01px 15.04px 0px #0000001a;
+      box-shadow: $box-shadow;
       border-radius: 15.04px;
       overflow: hidden;
       position: relative;
+
       &-container {
         padding: 13.5px 15px;
         transition: padding-right 500ms;
         width: 100%;
+
         &-title {
-          font-family: Roboto;
+          font-family: $font-family;
           font-weight: 500;
           font-size: 18px;
           line-height: 21.09px;
-          letter-spacing: 0%;
-          color: #000000;
+          color: $text-color;
           margin-bottom: 5px;
           text-overflow: ellipsis;
           overflow: hidden;
           white-space: nowrap;
         }
+
         &-content {
           display: flex;
-          flex-flow: row nowrap;
+          flex-flow: row;
           justify-content: space-between;
           gap: 5px;
+
           &-description {
-            font-family: Roboto;
+            font-family: $font-family;
             font-weight: 300;
             font-size: 15.04px;
             line-height: 17.63px;
-            letter-spacing: 0%;
-            color: #000000;
+            color: $text-color;
             height: 19px;
             text-overflow: ellipsis;
             overflow: hidden;
             white-space: nowrap;
           }
+
           &-price {
-            font-family: Roboto;
+            font-family: $font-family;
             font-weight: 700;
             font-size: 15.04px;
             line-height: 17.63px;
-            letter-spacing: 0%;
+            color: $light-text-color;
             text-align: center;
-            color: #353535;
           }
         }
       }
+
       &-anim {
         width: 59px;
         height: 69px;
         background-color: #99e2d0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex-center;
         border-radius: 0 15px 15px 0;
         left: 100%;
         position: absolute;
@@ -617,10 +644,12 @@ a {
         transition-property: transform;
         transition-duration: 500ms;
       }
+
       &:hover {
         .menu__dish-anim {
           transform: translateX(-100%);
         }
+
         .menu__dish-container {
           padding-right: 74px;
         }
@@ -629,27 +658,24 @@ a {
 
     &__order {
       display: flex;
-      flex-flow: row nowrap;
+      flex-flow: row;
       justify-content: center;
+
       &-btn {
         width: 186px;
         height: 50px;
         border-radius: 25px;
-        background: linear-gradient(0deg, #9356dc -11.44%, #ff79da 123.93%);
-        box-shadow: 0px 4px 10px 0px #00000040;
-        font-family: Roboto;
+        @include gradient-background;
+        box-shadow: $box-shadow;
+        font-family: $font-family;
         font-weight: 500;
         font-size: 16px;
         line-height: 18.75px;
-        letter-spacing: 0%;
-        text-align: center;
         color: #ffffff;
         border: none;
-        transition: filter 0.5s, box-shadow 0.5s;
+        @include box-shadow-hover;
+
         &:hover {
-          filter: brightness(115%);
-          box-shadow: 0px 4px 15px 0px #00000059;
-          background: linear-gradient(0deg, #9356dc -5.2%, #ff79da 110.74%);
           span {
             display: inline-block;
             animation: textMove 0.5s ease-in-out;
@@ -657,18 +683,18 @@ a {
         }
       }
     }
-    @media screen and (min-width: 768px) {
+
+    @include media-query(768px) {
       max-width: 1055px;
-      justify-content: center;
-      align-items: center;
+      @include flex-center;
     }
   }
 }
 
 .footer {
-  background-color: #353535;
+  background-color: $light-text-color;
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: column;
   width: 100%;
   padding: 22px 20px;
   gap: 16px;
@@ -677,33 +703,34 @@ a {
     font-weight: 400;
     font-size: 18px;
     line-height: 26.24px;
-    letter-spacing: 0;
-    font-family: Shrikhand, Roboto, sans-serif;
+    font-family: $title-font-family;
     color: #ffffff;
   }
 
   &__nav {
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: column;
     justify-content: space-between;
     align-items: self-start;
     gap: 7px;
 
     &-link-logo {
       font-weight: 500 !important;
-      @media screen and (min-width: 768px) {
+
+      @include media-query(768px) {
         width: 190px !important;
         height: 19px !important;
       }
     }
+
     &-link {
       height: 20px;
       font-size: 16px;
       font-weight: 400;
       line-height: 18.75px;
-      letter-spacing: 0;
       color: #ffffff;
-      @media screen and (min-width: 768px) {
+
+      @include media-query(768px) {
         width: 130px;
       }
     }
@@ -714,19 +741,22 @@ a {
       line-height: 13px;
       font-size: 13px;
       margin-right: 11px;
-      @media screen and (min-width: 768px) {
+
+      @include media-query(768px) {
         font-size: 11px;
       }
     }
-    @media screen and (min-width: 768px) {
-      flex-flow: row nowrap;
+
+    @include media-query(768px) {
+      flex-flow: row;
       gap: 7px;
     }
   }
-  @media screen and (min-width: 900px) {
-    flex-flow: row-reverse nowrap;
+
+  @include media-query(900px) {
+    flex-flow: row-reverse;
     justify-content: flex-start;
-    align-items: center;
+    @include flex-center;
     padding: 64px 25px 30px 599px;
   }
 }
@@ -740,7 +770,7 @@ a {
   transition: color 1s ease-in-out;
 
   &::after {
-    content: "\f004"; // Code Unicode pour l'icône de cœur
+    content: "\f004";
     font-family: "Font Awesome 5 Free";
     font-weight: 768;
     position: absolute;
@@ -748,7 +778,7 @@ a {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(0deg, #9356dc -11.44%, #ff79da 123.93%);
+    @include gradient-background;
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
@@ -771,10 +801,8 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(193.33deg, #9356dc -11.44%, #ff79da 123.93%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include gradient-background;
+  @include flex-center;
   z-index: 9999;
   animation: pulse 2s ease-in-out, fadeOut 1s linear 1s forwards,
     hideLoader 0s linear;
