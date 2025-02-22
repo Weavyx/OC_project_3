@@ -24,7 +24,7 @@ a {
 .restaurant-header {
   margin-bottom: -55px;
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 768px) {
   .restaurant-header {
     margin-bottom: -40px;
   }
@@ -44,7 +44,7 @@ a {
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1490196078);
   z-index: 50;
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 768px) {
   .header__title-container {
     height: 96px;
   }
@@ -57,7 +57,7 @@ a {
   color: #101010;
   font-family: Shrikhand, Roboto, sans-serif;
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 768px) {
   .header__title-container .header__title {
     height: 34.2px;
     font-size: 34.2px;
@@ -97,7 +97,7 @@ a {
   color: #353535;
   z-index: 100;
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 768px) {
   .header__go-back {
     top: 33px;
     left: 17px;
@@ -114,7 +114,7 @@ a {
   width: 100%;
   height: 100%;
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 768px) {
   .header__img {
     height: 383px;
   }
@@ -151,7 +151,7 @@ a {
   width: 275px;
   height: 68px;
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 768px) {
   .main-content .reserver__title {
     line-height: 46.88px;
     font-size: 40px;
@@ -175,7 +175,7 @@ a {
   height: 46px;
   margin-bottom: 27px;
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 768px) {
   .main-content .reserver__description {
     height: 46px;
     width: auto;
@@ -213,7 +213,7 @@ a {
   display: inline-block;
   animation: textMove 0.5s ease-in-out;
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 768px) {
   .main-content .reserver {
     padding: 30px 0;
   }
@@ -309,15 +309,15 @@ a {
   border-radius: 100%;
   transform: translate(-50%, -50%);
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 768px) {
   .main-content .fonctionnement__list {
     flex-flow: row nowrap;
     max-width: 1024px;
   }
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 768px) {
   .main-content .fonctionnement {
-    padding: 50px 0;
+    padding: 50px 26px;
     gap: 25px;
     justify-content: flex-start;
     align-items: center;
@@ -329,6 +329,18 @@ a {
   display: flex;
   flex-flow: column nowrap;
   gap: 20px;
+}
+@media screen and (min-width: 768px) {
+  .main-content .restaurants {
+    padding: 54px 90px;
+    gap: 24px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .main-content .restaurants {
+    padding: 54px 180px;
+    gap: 28px;
+  }
 }
 .main-content .restaurants__title {
   font-size: 24px;
@@ -342,13 +354,20 @@ a {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
+  justify-content: center;
   gap: 18px;
+}
+@media screen and (min-width: 768px) {
+  .main-content .restaurants__container {
+    flex-flow: row wrap;
+    gap: 40px;
+    row-gap: 25px;
+  }
 }
 @media screen and (min-width: 1440px) {
   .main-content .restaurants__container {
     gap: 100px;
     row-gap: 50px;
-    flex-flow: row wrap;
   }
 }
 .main-content .restaurants .restaurant-card {
@@ -357,11 +376,14 @@ a {
   border-radius: 20px;
   background-color: #fff;
   overflow: hidden;
-  max-width: 346px;
+}
+@media screen and (min-width: 768px) {
+  .main-content .restaurants .restaurant-card {
+    max-width: calc((100% - 40px) / 2);
+  }
 }
 @media screen and (min-width: 1440px) {
   .main-content .restaurants .restaurant-card {
-    width: 490px;
     max-width: 490px;
   }
 }
@@ -378,7 +400,7 @@ a {
   position: relative;
 }
 .main-content .restaurants .restaurant-card__image {
-  width: 346px;
+  width: 100%;
   height: 231px;
   position: absolute;
   bottom: 0;
@@ -386,12 +408,6 @@ a {
   transform: translateX(-50%);
   -o-object-fit: cover;
      object-fit: cover;
-}
-@media screen and (min-width: 1440px) {
-  .main-content .restaurants .restaurant-card__image {
-    width: 498.65px;
-    height: 231px;
-  }
 }
 .main-content .restaurants .restaurant-card__content {
   padding: 16px 25px 12px 13px;
@@ -402,7 +418,7 @@ a {
   justify-content: space-between;
   align-items: center;
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 768px) {
   .main-content .restaurants .restaurant-card__content {
     padding-left: 18.74px;
   }
@@ -447,12 +463,6 @@ a {
   justify-content: center;
   align-items: center;
 }
-@media screen and (min-width: 1440px) {
-  .main-content .restaurants {
-    padding: 30px 180px;
-    gap: 28px;
-  }
-}
 .main-content .menu {
   background-color: #f6f6f6;
   border-radius: 40px 40px 0 0;
@@ -477,7 +487,7 @@ a {
   color: #101010;
   font-family: Shrikhand, Roboto, sans-serif;
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 768px) {
   .main-content .menu__header-title {
     margin-right: 24px;
   }
@@ -485,7 +495,7 @@ a {
 .main-content .menu__header .fa-heart {
   margin-right: 24px;
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 768px) {
   .main-content .menu__header {
     justify-content: center;
     padding: 51px 0 40px 0;
@@ -530,7 +540,7 @@ a {
   flex-flow: column nowrap;
   gap: 12px;
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 768px) {
   .main-content .menu__section {
     max-width: 634px;
     width: 634px;
@@ -638,7 +648,7 @@ a {
   display: inline-block;
   animation: textMove 0.5s ease-in-out;
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 768px) {
   .main-content .menu {
     max-width: 1055px;
     justify-content: center;
@@ -672,7 +682,7 @@ a {
 .footer__nav-link-logo {
   font-weight: 500 !important;
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 768px) {
   .footer__nav-link-logo {
     width: 190px !important;
     height: 19px !important;
@@ -686,7 +696,7 @@ a {
   letter-spacing: 0;
   color: #ffffff;
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 768px) {
   .footer__nav-link {
     width: 130px;
   }
@@ -698,18 +708,18 @@ a {
   font-size: 13px;
   margin-right: 11px;
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 768px) {
   .footer__nav-icon {
     font-size: 11px;
   }
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 768px) {
   .footer__nav {
     flex-flow: row nowrap;
     gap: 7px;
   }
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 900px) {
   .footer {
     flex-flow: row-reverse nowrap;
     justify-content: flex-start;
@@ -729,7 +739,7 @@ a {
 .fa-heart::after {
   content: "\f004";
   font-family: "Font Awesome 5 Free";
-  font-weight: 900;
+  font-weight: 768;
   position: absolute;
   top: 0;
   left: 0;

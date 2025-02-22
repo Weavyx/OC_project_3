@@ -25,7 +25,7 @@ a {
 
 .restaurant-header {
   margin-bottom: -55px;
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 768px) {
     margin-bottom: -40px;
   }
 }
@@ -44,7 +44,7 @@ a {
     box-shadow: 0px 2px 4px 0px #00000026;
     z-index: 50;
 
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 768px) {
       height: 96px;
     }
 
@@ -55,7 +55,7 @@ a {
       letter-spacing: 0;
       color: #101010;
       font-family: Shrikhand, Roboto, sans-serif;
-      @media screen and (min-width: 1440px) {
+      @media screen and (min-width: 768px) {
         height: 34.2px;
         font-size: 34.2px;
       }
@@ -84,7 +84,7 @@ a {
       margin-right: 17px;
     }
 
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 768px) {
     }
   }
   &__go-back {
@@ -98,7 +98,7 @@ a {
     left: 17px;
     color: #353535;
     z-index: 100;
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 768px) {
       top: 33px;
       left: 17px;
     }
@@ -113,7 +113,7 @@ a {
       width: 100%;
       height: 100%;
     }
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 768px) {
       height: 383px;
     }
   }
@@ -149,7 +149,7 @@ a {
       text-align: center;
       width: 275px;
       height: 68px;
-      @media screen and (min-width: 1440px) {
+      @media screen and (min-width: 768px) {
         line-height: 46.88px;
         font-size: 40px;
         width: auto;
@@ -174,7 +174,7 @@ a {
       height: 46px;
       margin-bottom: 27px;
 
-      @media screen and (min-width: 1440px) {
+      @media screen and (min-width: 768px) {
         height: 46px;
         width: auto;
         margin-bottom: 18px;
@@ -214,7 +214,7 @@ a {
       }
     }
 
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 768px) {
       padding: 30px 0;
     }
   }
@@ -315,13 +315,13 @@ a {
           transform: translate(-50%, -50%);
         }
       }
-      @media screen and (min-width: 1440px) {
+      @media screen and (min-width: 768px) {
         flex-flow: row nowrap;
         max-width: 1024px;
       }
     }
-    @media screen and (min-width: 1440px) {
-      padding: 50px 0;
+    @media screen and (min-width: 768px) {
+      padding: 50px 26px;
       gap: 25px;
       justify-content: flex-start;
       align-items: center;
@@ -334,6 +334,17 @@ a {
     display: flex;
     flex-flow: column nowrap;
     gap: 20px;
+
+    @media screen and (min-width: 768px) {
+      padding: 54px 90px;
+      gap: 24px;
+    }
+
+    @media screen and (min-width: 1440px) {
+      padding: 54px 180px;
+      gap: 28px;
+    }
+
     &__title {
       font-size: 24px;
       font-weight: 700;
@@ -342,15 +353,23 @@ a {
       color: #000000;
       width: 100%;
     }
+
     &__container {
       display: flex;
       flex-flow: column nowrap;
       align-items: center;
+      justify-content: center;
       gap: 18px;
+
+      @media screen and (min-width: 768px) {
+        flex-flow: row wrap;
+        gap: 40px;
+        row-gap: 25px;
+      }
+
       @media screen and (min-width: 1440px) {
         gap: 100px;
         row-gap: 50px;
-        flex-flow: row wrap;
       }
     }
 
@@ -360,9 +379,12 @@ a {
       border-radius: 20px;
       background-color: #fff;
       overflow: hidden;
-      max-width: 346px;
+
+      @media screen and (min-width: 768px) {
+        max-width: calc((100% - 40px) / 2);
+      }
+
       @media screen and (min-width: 1440px) {
-        width: 490px;
         max-width: 490px;
       }
 
@@ -372,25 +394,24 @@ a {
         gap: 0;
         width: 100%;
       }
+
       &__container-img {
         width: 100%;
         height: 174px;
         overflow: hidden;
         position: relative;
       }
+
       &__image {
-        width: 346px;
+        width: 100%;
         height: 231px;
         position: absolute;
         bottom: 0;
         left: 50%;
         transform: translateX(-50%);
         object-fit: cover;
-        @media screen and (min-width: 1440px) {
-          width: 498.65px;
-          height: 231px;
-        }
       }
+
       &__content {
         padding: 16px 25px 12px 13px;
         display: flex;
@@ -399,7 +420,8 @@ a {
         row-gap: 5px;
         justify-content: space-between;
         align-items: center;
-        @media screen and (min-width: 1440px) {
+
+        @media screen and (min-width: 768px) {
           padding-left: 18.74px;
         }
       }
@@ -448,10 +470,6 @@ a {
         align-items: center;
       }
     }
-    @media screen and (min-width: 1440px) {
-      padding: 30px 180px;
-      gap: 28px;
-    }
   }
 
   & .menu {
@@ -475,14 +493,14 @@ a {
         letter-spacing: 0;
         color: #101010;
         font-family: Shrikhand, Roboto, sans-serif;
-        @media screen and (min-width: 1440px) {
+        @media screen and (min-width: 768px) {
           margin-right: 24px;
         }
       }
       & .fa-heart {
         margin-right: 24px;
       }
-      @media screen and (min-width: 1440px) {
+      @media screen and (min-width: 768px) {
         justify-content: center;
         padding: 51px 0 40px 0;
       }
@@ -528,7 +546,7 @@ a {
         flex-flow: column nowrap;
         gap: 12px;
       }
-      @media screen and (min-width: 1440px) {
+      @media screen and (min-width: 768px) {
         max-width: 634px;
         width: 634px;
       }
@@ -639,7 +657,7 @@ a {
         }
       }
     }
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 768px) {
       max-width: 1055px;
       justify-content: center;
       align-items: center;
@@ -673,7 +691,7 @@ a {
 
     &-link-logo {
       font-weight: 500 !important;
-      @media screen and (min-width: 1440px) {
+      @media screen and (min-width: 768px) {
         width: 190px !important;
         height: 19px !important;
       }
@@ -685,7 +703,7 @@ a {
       line-height: 18.75px;
       letter-spacing: 0;
       color: #ffffff;
-      @media screen and (min-width: 1440px) {
+      @media screen and (min-width: 768px) {
         width: 130px;
       }
     }
@@ -696,16 +714,16 @@ a {
       line-height: 13px;
       font-size: 13px;
       margin-right: 11px;
-      @media screen and (min-width: 1440px) {
+      @media screen and (min-width: 768px) {
         font-size: 11px;
       }
     }
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 768px) {
       flex-flow: row nowrap;
       gap: 7px;
     }
   }
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 900px) {
     flex-flow: row-reverse nowrap;
     justify-content: flex-start;
     align-items: center;
@@ -724,7 +742,7 @@ a {
   &::after {
     content: "\f004"; // Code Unicode pour l'icône de cœur
     font-family: "Font Awesome 5 Free";
-    font-weight: 900;
+    font-weight: 768;
     position: absolute;
     top: 0;
     left: 0;
