@@ -1,0 +1,221 @@
+.restaurant-header {
+  margin-bottom: -55px;
+  @include media-query(768px) {
+    margin-bottom: -40px;
+  }
+}
+
+.menu {
+  background-color: $background-color;
+  border-radius: 40px 40px 0 0;
+  display: flex;
+  flex-flow: column;
+  padding-bottom: 40px;
+  z-index: 1000;
+
+  &__header {
+    padding: 32px 17px 40px 17px;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    &-title {
+      font-size: 28px;
+      font-weight: 400;
+      line-height: 40.82px;
+      color: #101010;
+      font-family: $title-font-family;
+
+      @include media-query(768px) {
+        margin-right: 24px;
+      }
+    }
+
+    .fa-heart {
+      margin-right: 24px;
+    }
+
+    @include media-query(768px) {
+      justify-content: center;
+      padding: 51px 0 40px 0;
+    }
+  }
+
+  &__section {
+    padding: 0 13px;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+
+    &:nth-child(2) {
+      animation-delay: 0.5s;
+    }
+
+    &:nth-child(3) {
+      animation-delay: 0.75s;
+    }
+
+    &:nth-child(4) {
+      animation-delay: 1.25s;
+    }
+
+    &-header {
+      margin-bottom: 12px;
+
+      &-title {
+        font-family: $font-family;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 18.75px;
+        text-transform: uppercase;
+
+        &::after {
+          content: "";
+          display: block;
+          width: 40px;
+          height: 3px;
+          background-color: #99e2d0;
+          margin-top: 5.25px;
+        }
+      }
+    }
+
+    &-content {
+      display: flex;
+      flex-flow: column;
+      gap: 12px;
+    }
+
+    @include media-query(768px) {
+      max-width: 634px;
+      width: 634px;
+    }
+  }
+
+  &__dish {
+    height: 69px;
+    width: 100%;
+    box-shadow: $box-shadow;
+    border-radius: 15.04px;
+    overflow: hidden;
+    position: relative;
+
+    &-container {
+      padding: 13.5px 15px;
+      transition: padding-right 500ms;
+      width: 100%;
+
+      &-title {
+        font-family: $font-family;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 21.09px;
+        color: $text-color;
+        margin-bottom: 5px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+
+      &-content {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        gap: 5px;
+
+        &-description {
+          font-family: $font-family;
+          font-weight: 300;
+          font-size: 15.04px;
+          line-height: 17.63px;
+          color: $text-color;
+          height: 19px;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+
+        &-price {
+          font-family: $font-family;
+          font-weight: 700;
+          font-size: 15.04px;
+          line-height: 17.63px;
+          color: $light-text-color;
+          text-align: center;
+        }
+      }
+    }
+
+    &-anim {
+      width: 59px;
+      height: 69px;
+      background-color: #99e2d0;
+      @include flex-center;
+      border-radius: 0 15px 15px 0;
+      left: 100%;
+      position: absolute;
+      top: 0;
+      transition-property: transform;
+      transition-duration: 500ms;
+    }
+
+    &:hover {
+      .menu__dish-anim {
+        transform: translateX(-100%);
+      }
+
+      .menu__dish-container {
+        padding-right: 74px;
+      }
+    }
+  }
+
+  &__order {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+
+    &-btn {
+      width: 186px;
+      height: 50px;
+      border-radius: 25px;
+      @include gradient-background;
+      box-shadow: $box-shadow;
+      font-family: $font-family;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 18.75px;
+      color: #ffffff;
+      border: none;
+      @include box-shadow-hover;
+
+      &:hover {
+        span {
+          display: inline-block;
+          animation: textMove 0.5s ease-in-out;
+        }
+      }
+    }
+  }
+
+  @include media-query(768px) {
+    max-width: 850px !important;
+    @include flex-center;
+  }
+  @include media-query(1440px) {
+    max-width: 1055px !important;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
