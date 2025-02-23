@@ -1,0 +1,11 @@
+.main-content {
+  @include flex-center;
+  background-color: #ffffff;
+  flex-flow: column;
+  width: 100%;
+
+  main {
+    width: 100%;
+    max-width: 1440px;
+  }
+}
