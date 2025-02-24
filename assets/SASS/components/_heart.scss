@@ -1,3 +1,37 @@
+// .fa-heart {
+//   width: 22px;
+//   height: 22px;
+//   color: black;
+//   font-size: 22px;
+//   position: relative;
+//   transition: color 1s ease-in-out;
+
+//   &::after {
+//     content: "\f004";
+//     font-family: "Font Awesome 5 Free";
+//     font-weight: 768;
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+//     @include gradient-background;
+//     background-clip: text;
+//     -webkit-background-clip: text;
+//     color: transparent;
+//     clip-path: circle(0% at 50% 50%);
+//     transition: clip-path 1s ease-in-out;
+//   }
+
+//   &:hover::after {
+//     clip-path: circle(100% at 50% 50%);
+//   }
+
+//   &:hover {
+//     color: transparent;
+//   }
+// }
+
 .fa-heart {
   width: 22px;
   height: 22px;
@@ -9,7 +43,7 @@
   &::after {
     content: "\f004";
     font-family: "Font Awesome 5 Free";
-    font-weight: 768;
+    font-weight: 900;
     position: absolute;
     top: 0;
     left: 0;
@@ -19,12 +53,12 @@
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    clip-path: circle(0% at 50% 50%);
-    transition: clip-path 1s ease-in-out;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
   }
 
   &:hover::after {
-    clip-path: circle(100% at 50% 50%);
+    opacity: 1;
   }
 
   &:hover {
